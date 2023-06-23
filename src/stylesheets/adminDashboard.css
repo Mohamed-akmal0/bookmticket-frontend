@@ -1,0 +1,92 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th,
+  td {
+    padding: 1rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  th {
+    font-weight: normal;
+    font-size: .875rem;
+    color: #666;
+    background: #eee;
+    /*  以下２行で見出しを固定  */
+    position: sticky;
+    top: 0;
+  }
+  img {
+    width: 80px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: .5rem;
+  }
+  
+  /* レスポンシブ対応 */
+  @media(max-width: 500px) {
+    .heading {
+      display: none;
+    }
+    td {
+      display: block;
+    }
+    .car-name {
+      background: #eee;
+    }
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: 'El Messiri', sans-serif;
+  }
+  .block{
+    margin-top: 9px;
+    margin-left: 30px;
+    width: 80px;
+    height: 40px;
+    border: none;
+    color: white;
+    background-color: rgb(179, 16, 16);
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s; 
+  }
+  .block:hover{
+    transform: scale(1.12);
+  }
+  .unblock{
+    margin-top: 9px;
+    margin-left: 30px;
+    width: 80px;
+    height: 40px;
+    border: none;
+    color: white;
+    background-color: rgb(24, 213, 17);
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s; 
+  }
+  .unblock:hover{
+    transform: scale(1.12);
+  }
+  .movie_btn{
+    margin-top: 9px;
+    margin-left: 30px;
+    width: 100px;
+    height: 50px;
+    border: none;
+    color: white;
+    background-color: rgb(244, 132, 13);
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  .movie_btn:hover{
+    transform: scale(1.25);
+  }

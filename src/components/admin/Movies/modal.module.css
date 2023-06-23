@@ -1,0 +1,19 @@
+.input{
+    border: none;
+    background-color: rgb(229,226,226);
+    width: 40%;
+    height: 3em;
+    border-radius: 0.25em;
+    text-align: center;
+    padding: 1em;
+}
+.input:hover{
+    outline-color: rgb(32 ,177 ,255);
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    background-color: red;
+}
