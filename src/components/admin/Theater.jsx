@@ -3,10 +3,12 @@ import Header from './header/Header'
 import '../../stylesheets/adminDashboard.css'
 import { Axios } from '../../common/axiosInstance'
 import {toast , ToastContainer} from 'react-toastify'
+import { handleTheaterData } from '../../redux/actions/theaterAction'
+import { useDispatch, useSelector } from 'react-redux'
 
 function TheaterDisplay() {
-
-    const [theater , SetTheater] = useState([])
+    const dispatch = useDispatch()
+    const theaterData = useSelector((state) => state.theater.theater ?? [])
     const [block , setBlock] = useState(false)
     const genMsg = (msg) => toast.success(msg,{position : 'top-center'})
 
@@ -36,7 +38,7 @@ function TheaterDisplay() {
     }
 
     useEffect(() => {
-        Axios.get('/admin/approved-theater').then((response => SetTheater(response.data)))
+        handleTheaterData(dispatch)
     },[])
 
   return (
@@ -54,13 +56,13 @@ function TheaterDisplay() {
             <th>Status</th>
             </tr>
             <tbody>
-            {theater.map((data, i) => {
+            {theaterData.map((data, i) => {
                 return(
                         <tr key={i}>
-                            <td key={i} >{data.username}</td>
-                            <td key={i} >{data.email}</td>
-                            <td key={i} >{data.theaterName}</td>
-                            <td key={i} >{data.location}</td>
+                            <td >{data.username}</td>
+                            <td >{data.email}</td>
+                            <td >{data.theaterName}</td>
+                            <td >{data.location}</td>
                             {data.isBlocked === false? (
                                 <button className='block' onClick={()=>blockTheater(data._id)} >BLOCK</button>
                             ):(
