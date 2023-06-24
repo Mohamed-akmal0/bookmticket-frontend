@@ -17,14 +17,12 @@ function SignupUser() {
     
     const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log(values)
         setError(validate(values))
         try{
             const {data} = await Axios.post('/client/signup' , {
                 ...values
                
             })
-            console.log(data)
             navigate('/login')
         }catch(e){
             console.log('api calling error')
@@ -37,7 +35,6 @@ function SignupUser() {
     }
 
     const validate = (details) => {
-        console.log(details)
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
         if(!details.username){
             const error = 'Username is required'
