@@ -35,7 +35,7 @@ function Movielist() {
             <tbody>
               {movies.map((data,i)=> {
                 return(
-                  <tr>
+                  <tr key={i} >
                     <td>{data.title}</td>
                     <td>{data.description}</td>
                     <td>{data.genre}</td>

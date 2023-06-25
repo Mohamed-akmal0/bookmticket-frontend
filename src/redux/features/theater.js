@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
- theater: []
+  theater: [],
+  BlockedTheater: [],
 };
 
 export const theaterSlice = createSlice({
@@ -11,9 +12,11 @@ export const theaterSlice = createSlice({
     setTheater: (state, action) => {
       state.theater = action.payload;
     },
+    setBlockedTheater: (state, action) => {
+        state.BlockedTheater = action.payload;
+    }
   },
 });
 
-export const { setTheater } =
-theaterSlice.actions;
+export const { setTheater, setBlockedTheater } = theaterSlice.actions;
 export default theaterSlice.reducer;

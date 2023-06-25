@@ -10,6 +10,7 @@ import Theater from './pages/admin/Theater'
 import TheaterSignup from './pages/theater/TheaterSignup'
 import TheaterLogin from './pages/theater/TheaterLogin'
 import Screen from './pages/theater/Screen'
+import { BlockedTheater } from './pages/admin/Blocked'
 
 function Router() {
   return (
@@ -30,6 +31,7 @@ function Router() {
         <Route path='/admin/dashboard' element = {<DashAdmin/>}/>
         <Route path='/admin/theater' element = {<Theater/>}/>
         <Route path='/admin/movies' element = {<Movies/>}/>
+        <Route path='/admin/blocked' element = {<BlockedTheater/>}/>
     </Routes>
     </BrowserRouter>
   )
